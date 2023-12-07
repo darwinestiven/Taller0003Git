@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var btnLimparTela = document.getElementById("limparTela");
     var btnApagarAnterior = document.getElementById("apagarAnterior");
 
+    //Boton Convertir
+    var btnConversion = document.getElementById("conversion");
+
     listenerBtn.push(document.getElementById("ponto"));
 
     //teclas dos operadores
@@ -101,6 +104,15 @@ document.addEventListener("DOMContentLoaded", function () {
             default:
                 return false;
         }
+    }
+
+    function convertir() {
+        var gradosFahrenheit = (tela.value * 9/5) + 32;
+        tela.value = gradosFahrenheit.toFixed(2); // Mostrar el resultado con dos decimales
+    }
+    
+    btnConversion.onclick = function () {
+        convertir();
     }
 
 });
